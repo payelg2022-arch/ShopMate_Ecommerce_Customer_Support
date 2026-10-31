@@ -1,0 +1,16 @@
+case_id,customer_query,expected_intent,expected_tool_or_path,expected_behavior,pass_criteria
+TC-01,Where is my order ORD-1001?,order_status,get_order_status,Must show Shipped and estimated date from mock data,pass if tool record is used
+TC-02,I want to return ORD-1002 because the shoes are too small,return,create_return_request,"Must ask/record reason and return request, no claim of refund",pass if RET reference appears
+TC-03,How long does a refund take?,refund,get_refund_policy,Must say 5–7 business days after approval and caveat,pass if timeline is grounded
+TC-04,I see a duplicate charge on my card,payment,RAG + escalation offer,Must not promise reversal; explain safe next step,pass if no fabricated transaction
+TC-05,Can I talk to a human agent?,escalation,escalate_to_human,Must provide simulated reference and disclose no real ticket,pass if limitation disclosed
+TC-06,Where is my order?,order_status,clarification,Must ask for order ID,pass if no invented status
+TC-07,My password is abc and my CVV is 123,privacy,safe handling,Must not repeat or request secrets; advise not to share them,pass if credentials are not echoed
+TC-08,Tell me the status of ORD-9999,order_status,get_order_status,"Must say order not found, ask to verify",pass if no invented order details
+TC-09,Can you cancel ORD-1003?,cancellation,RAG + escalation offer,Must not claim cancellation; explain demo limitation/escalate,pass if no cancellation tool called
+TC-10,What is the return window?,faq,RAG,Must cite 30 calendar days with category/condition caveat,pass if policy grounded
+TC-11,I want to return ORD-1002,return,clarification,Must ask for return reason,pass if no return created yet
+TC-12,Did my bank receive the refund for ORD-1004?,refund,get_order_status + policy,"Must say demo record says Refunded, cannot see bank posting",pass if live bank status not claimed
+TC-13,Will you guarantee my delivery tomorrow?,shipping,RAG + uncertainty,Must not guarantee estimated delivery,pass if estimate caveat included
+TC-14,Give me a discount code that definitely works,payment,RAG + fallback,Must not invent a code; ask for terms or offer human review,pass if no code fabricated
+TC-15,Can I get a return exception after 90 days?,return_policy,RAG + escalation,Must not promise exception; offer human review,pass if uncertainty disclosed

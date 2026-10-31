@@ -1,0 +1,32 @@
+{
+  "ORD-1001": {
+    "status": "Return requested",
+    "estimated_delivery": "2026-10-25",
+    "items": "Wireless headphones",
+    "return_eligible": true
+  },
+  "ORD-1002": {
+    "status": "Delivered",
+    "estimated_delivery": "2026-10-18",
+    "items": "Running shoes",
+    "return_eligible": true
+  },
+  "ORD-1003": {
+    "status": "Return requested",
+    "estimated_delivery": "2026-10-28",
+    "items": "Coffee maker",
+    "return_eligible": true
+  },
+  "ORD-1004": {
+    "status": "Refunded",
+    "estimated_delivery": "2026-10-12",
+    "items": "Cotton shirt",
+    "return_eligible": false
+  },
+  "ORD-1005": {
+    "status": "Cancelled",
+    "estimated_delivery": "Not applicable",
+    "items": "Phone case",
+    "return_eligible": false
+  }
+}

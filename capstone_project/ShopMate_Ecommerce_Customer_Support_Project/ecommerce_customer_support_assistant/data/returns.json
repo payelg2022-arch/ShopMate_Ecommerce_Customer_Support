@@ -1,0 +1,16 @@
+{
+  "ORD-1002": {
+    "return_id": "RET-1002",
+    "order_id": "ORD-1002",
+    "reason": "shoes are too small",
+    "status": "Requested",
+    "message": "Return request recorded in the mock system. A human agent would confirm pickup details."
+  },
+  "ORD-1003": {
+    "return_id": "RET-1003",
+    "order_id": "ORD-1003",
+    "reason": "The item arrived in the wrong color. I want to start a return.",
+    "status": "Requested",
+    "message": "Return request recorded in the mock system. A human agent would confirm pickup details."
+  }
+}

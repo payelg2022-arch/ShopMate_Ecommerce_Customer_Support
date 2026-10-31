@@ -1,0 +1,16 @@
+query,intent
+Where is my order ORD-1001?,order_status
+I want to return ORD-1002 because the shoes are too small,return
+How long does a refund take?,refund
+I see a duplicate charge on my card,payment
+Can I talk to a human agent?,escalation
+Where is my order?,order_status
+My password is abc and my CVV is 123,privacy
+Tell me the status of ORD-9999,order_status
+Can you cancel ORD-1003?,cancellation
+What is the return window?,faq
+I want to return ORD-1002,return
+Did my bank receive the refund for ORD-1004?,refund
+Will you guarantee my delivery tomorrow?,shipping
+Give me a discount code that definitely works,payment
+Can I get a return exception after 90 days?,return_policy

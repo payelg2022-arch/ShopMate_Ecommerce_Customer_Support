@@ -1,0 +1,26 @@
+[
+  {
+    "turn": 1,
+    "user": "Where is my order ORD-1001?",
+    "assistant": "Order ORD-1001: Shipped. Estimated delivery: 2026-10-25. Items: Wireless headphones. This is demo order data.",
+    "intent": "order_status",
+    "tool": "get_order_status",
+    "expected": "grounded mock record"
+  },
+  {
+    "turn": 2,
+    "user": "I want to return ORD-1002",
+    "assistant": "I found the order ID ORD-1002. What is the reason for the return (for example, damaged item or wrong size)?",
+    "intent": "return",
+    "tool": "clarification",
+    "expected": "asks for missing reason"
+  },
+  {
+    "turn": 3,
+    "user": "I see a duplicate charge on my card",
+    "assistant": "For a suspected duplicate charge, compare the merchant name, amount, and date. Pending authorisations can look like duplicates. I can't confirm a live transaction; I can flag this for human support.",
+    "intent": "payment",
+    "tool": "RAG",
+    "expected": "no promise of reversal"
+  }
+]

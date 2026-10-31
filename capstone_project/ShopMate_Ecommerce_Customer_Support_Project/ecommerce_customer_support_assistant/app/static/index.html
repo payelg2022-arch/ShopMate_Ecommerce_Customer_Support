@@ -1,0 +1,31 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ShopMate | Customer Support</title><link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar">
+    <div class="brand"><div class="brand-icon">S</div><div><b>ShopMate</b><small>Customer care</small></div></div>
+    <div class="side-label">QUICK TOPICS</div>
+    <button class="topic" data-msg="Where is my order ORD-1001?">📦 Track an order</button>
+    <button class="topic" data-msg="What is your return policy?">↩️ Returns & exchanges</button>
+    <button class="topic" data-msg="How long does a refund take?">💳 Refunds & payments</button>
+    <button class="topic" data-msg="How can I contact a human support agent?">🙋 Talk to support</button>
+    <div class="side-note"><span class="status-dot"></span> Demo support is online<br><small>Sample data · No real transactions</small></div>
+  </aside>
+  <main class="main">
+    <header><div><div class="eyebrow">SHOPMATE HELP CENTER</div><h1>How can we help today?</h1><p>Ask about orders, returns, payments, and store policies.</p></div><div class="avatar">SM</div></header>
+    <div class="notice">✨ <b>AI support assistant</b> <span>Answers use demo order data and help-center policies.</span></div>
+    <section id="chat" class="chat">
+      <div class="message bot"><div class="bubble"><b>Hello! I'm ShopMate.</b><br>I'm here to help with orders, returns, refunds, and store policies. What can I help you with?</div></div>
+    </section>
+    <div class="suggestions"><button data-msg="Where is my order ORD-1001?">Track my order</button><button data-msg="What is your return policy?">Return policy</button><button data-msg="How long does a refund take?">Refund timeline</button></div>
+    <form id="form"><textarea id="input" placeholder="Type your question here..." rows="1" maxlength="2000"></textarea><button id="send" type="submit">Send ↗</button></form>
+    <div class="fineprint">ShopMate can make mistakes. Never share passwords, OTPs, CVVs, or full card numbers.</div>
+  </main>
+</div>
+<script src="/static/app.js?v=2"></script>
+</body></html>

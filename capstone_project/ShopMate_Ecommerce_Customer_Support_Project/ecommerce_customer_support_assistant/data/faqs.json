@@ -1,0 +1,52 @@
+[
+  {
+    "id": "FAQ-001",
+    "title": "Return window and eligibility",
+    "content": "Most unused items can be returned within 30 calendar days after delivery. Items must be in their original condition with included accessories. Some categories, including personalised goods and final-sale items, may be excluded. Eligibility in this demo is determined by the order record. If a case is unclear, escalate to a human agent."
+  },
+  {
+    "id": "FAQ-002",
+    "title": "Refund processing timeline",
+    "content": "After a returned item is received and inspected, an approved refund is initiated to the original payment method. The demo estimate is 5\u20137 business days after approval. Banks or payment providers may take additional time to post funds. The assistant cannot see live payment-processor transactions."
+  },
+  {
+    "id": "FAQ-003",
+    "title": "Shipping and delivery",
+    "content": "Orders are processed on business days. Delivery estimates are estimates, not guarantees, and may change due to carrier or weather delays. The order-status tool is the source of truth for the synthetic demo orders. If tracking has not changed for several business days, offer human support."
+  },
+  {
+    "id": "FAQ-004",
+    "title": "Payment declined",
+    "content": "If a payment is declined, check that the billing details are correct and contact your bank or payment provider. Do not share a password, one-time passcode, CVV, or full card number in chat. The assistant cannot access or change payment credentials."
+  },
+  {
+    "id": "FAQ-005",
+    "title": "Duplicate charge or billing dispute",
+    "content": "For a suspected duplicate charge, first compare the merchant name, amount, and date in your payment statement. Pending authorisations can look like duplicate charges and may disappear according to the payment provider's timeline. Do not promise a reversal. Escalate disputed or unresolved charges to a human support agent."
+  },
+  {
+    "id": "FAQ-006",
+    "title": "Order cancellation",
+    "content": "Cancellation may be possible before an order enters fulfilment. This demo assistant does not cancel orders. It can explain general policy and escalate a cancellation request to human support."
+  },
+  {
+    "id": "FAQ-007",
+    "title": "Contact human support",
+    "content": "Customers can request human support at any time. In this demo, escalation creates a simulated reference number only; it does not contact a real support team. Explain the limitation clearly."
+  },
+  {
+    "id": "FAQ-008",
+    "title": "Privacy and personal information",
+    "content": "Only provide the order ID and information needed to describe the issue. Never share passwords, OTPs, CVV, full payment-card numbers, or government identity numbers. Do not expose another customer's order information."
+  },
+  {
+    "id": "FAQ-009",
+    "title": "Wrong or damaged item",
+    "content": "If an item arrives damaged or the wrong item was delivered, keep the packaging and describe the issue when requesting a return. A human agent may need to review photographs or other evidence. The demo cannot upload evidence or approve exceptions."
+  },
+  {
+    "id": "FAQ-010",
+    "title": "Promotions and discount codes",
+    "content": "Promotions may have expiry dates, product exclusions, minimum basket values, or one-use restrictions. The assistant should not invent or guarantee a discount. If the promotion terms are not available, ask for the code details without requesting sensitive information and offer escalation."
+  }
+]

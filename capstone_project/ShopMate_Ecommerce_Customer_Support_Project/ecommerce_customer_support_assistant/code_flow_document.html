@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ShopMate Code Flow Guide</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; line-height: 1.6; color: #1f1f1f; }
+    h1, h2 { color: #1f3a5f; }
+    h2 { margin-top: 26px; }
+    .small { font-size: 12px; color: #555; }
+    code { background: #f2f4f8; padding: 2px 6px; border-radius: 4px; }
+    ul { margin-top: 8px; }
+    li { margin: 6px 0; }
+    .box { border-left: 4px solid #1f3a5f; padding-left: 14px; margin: 12px 0; }
+  </style>
+</head>
+<body>
+  <h1>ShopMate Code Flow Guide</h1>
+  <p class="small">E-commerce Customer Support Assistant</p>
+
+  <h2>1. High-level architecture</h2>
+  <p>The app is a FastAPI backend with a browser chat UI. The frontend posts questions to <code>/api/chat</code>. The backend classifies the user intent, retrieves relevant policy text, invokes mock commerce tools for order and return logic, and optionally asks a Groq LLM to turn retrieved context into a natural-language answer.</p>
+
+  <h2>2. Request flow</h2>
+  <div class="box">
+    Browser UI → <code>app/static/app.js</code> → <code>POST /api/chat</code> → <code>app/main.py</code> → <code>SupportAgent.answer()</code> → classification + retrieval + tool/LLM handling → JSON response
+  </div>
+
+  <h2>3. Main code files</h2>
+  <ul>
+    <li><strong>app/main.py</strong>: Creates the FastAPI app, mounts static files, serves the UI, defines the chat endpoint, and exposes health/demo-order endpoints.</li>
+    <li><strong>app/agent.py</strong>: Orchestrates the workflow. It classifies user intent, retrieves relevant FAQ passages, handles order/return/refund/escalation logic, and optionally calls Groq.</li>
+    <li><strong>app/knowledge.py</strong>: Retrieval layer. Tries sentence transformers first, then falls back to TF-IDF when needed.</li>
+    <li><strong>app/tools.py</strong>: Mock business logic for order status, returns, refund policy, and human escalation.</li>
+    <li><strong>app/config.py</strong>: Loads environment variables from <code>.env</code>, including model and API key settings.</li>
+    <li><strong>app/static/app.js</strong>: Browser-side chat logic to send requests and render replies.</li>
+  </ul>
+
+  <h2>4. Intent and decision logic</h2>
+  <p>The agent checks whether the message is about:</p>
+  <ul>
+    <li>order status</li>
+    <li>return requests</li>
+    <li>refunds and payments</li>
+    <li>human escalation</li>
+    <li>general FAQ questions</li>
+  </ul>
+  <p>For order and return actions, it uses the mock data layer instead of a live payment system. For FAQ questions, it retrieves ranked help-center content and optionally feeds it to Groq to produce a final answer.</p>
+
+  <h2>5. Data layer</h2>
+  <p>The app stores synthetic customer data in the local JSON files under <code>data/</code>:</p>
+  <ul>
+    <li><code>data/faqs.json</code> — FAQ and policy knowledge</li>
+    <li><code>data/orders.json</code> — synthetic order records</li>
+    <li><code>data/returns.json</code> — return requests created by the mock system</li>
+  </ul>
+
+  <h2>6. Why the app falls back</h2>
+  <p>If the Groq model call fails, the app catches the exception, writes the error type to the server log, and returns the best retrieved knowledge from the local FAQ store. This keeps the app usable even when the external model is unavailable.</p>
+
+  <h2>7. Short code explanation</h2>
+  <ul>
+    <li><code>app/main.py</code> defines the HTTP layer and API schema.</li>
+    <li><code>app/agent.py</code> is the core decision engine.</li>
+    <li><code>app/knowledge.py</code> is the retrieval layer for local RAG.</li>
+    <li><code>app/tools.py</code> is the fake commerce backend.</li>
+    <li><code>app/static/app.js</code> handles user interaction in the browser.</li>
+  </ul>
+
+  <h2>8. Summary</h2>
+  <p>This is a compact customer support assistant that combines routing, retrieval-augmented generation, mock product data, and optional LLM-based answer generation. It is ideal for demo use, evaluation, and teaching agent design patterns in a small real project.</p>
+</body>
+</html>
